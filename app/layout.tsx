@@ -1,7 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Playfair_Display, Montserrat } from "next/font/google"
+import { Playfair_Display, Montserrat, Geist } from "next/font/google"
 import "./globals.css"
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
 
 // Optimized font loading with display swap
 const playfair = Playfair_Display({
@@ -83,7 +87,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="nl" className="scroll-smooth">
+    <html lang="nl" className={cn("scroll-smooth", "font-sans", geist.variable)}>
       <head>
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
