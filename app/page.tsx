@@ -15,15 +15,7 @@ import { FAQSection } from "@/components/faq-section"
 import { useLanguage } from "@/hooks/use-language"
 
 export default function Home() {
-  const { language, changeLanguage, isLoaded } = useLanguage()
-
-  if (!isLoaded) {
-    return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
-        <div className="text-gold text-2xl font-serif">Loading...</div>
-      </div>
-    )
-  }
+  const { language, changeLanguage } = useLanguage()
 
   return (
     <>
